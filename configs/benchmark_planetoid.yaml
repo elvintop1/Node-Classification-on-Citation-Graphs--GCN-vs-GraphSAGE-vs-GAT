@@ -1,0 +1,20 @@
+benchmark:
+  name: benchmark_planetoid
+  output_dir: outputs/benchmark_planetoid
+  seeds: [13, 42, 99]
+  datasets: [Cora, CiteSeer, PubMed]
+  models: [gcn, graphsage, gat]
+
+model_templates:
+  gcn: configs/gcn_cora.yaml
+  graphsage: configs/graphsage_cora.yaml
+  gat: configs/gat_cora.yaml
+
+shared_overrides:
+  training:
+    max_epochs: 300
+    early_stopping_patience: 60
+    monitor: val_macro_f1
+    monitor_mode: max
+  data:
+    normalize_features: true

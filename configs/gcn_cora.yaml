@@ -1,0 +1,30 @@
+experiment:
+  name: cora_gcn
+  output_dir: outputs/single_runs
+  seed: 42
+
+data:
+  root_dir: data
+  dataset_name: Cora
+  normalize_features: true
+
+model:
+  name: gcn
+  hidden_dim: 128
+  num_layers: 2
+  dropout: 0.5
+
+training:
+  max_epochs: 300
+  lr: 0.01
+  weight_decay: 0.0005
+  early_stopping_patience: 50
+  monitor: val_macro_f1
+  monitor_mode: max
+  label_smoothing: 0.0
+  grad_clip_norm: null
+  log_every: 10
+
+system:
+  device: auto
+  num_workers: 0

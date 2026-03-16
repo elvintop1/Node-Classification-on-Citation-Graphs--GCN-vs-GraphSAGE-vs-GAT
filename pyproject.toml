@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "citation-gnn-benchmark"
+version = "0.1.0"
+description = "Empirical benchmark for node classification on citation graphs using GCN, GraphSAGE, and GAT."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  {name = "OpenAI generated project scaffold for Do Quang Hao"}
+]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "pyyaml>=6.0",
+  "scikit-learn>=1.3",
+  "matplotlib>=3.7",
+  "tqdm>=4.66",
+  "torch>=2.1",
+  "torch-geometric>=2.5"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,32 @@
+experiment:
+  name: cora_gat
+  output_dir: outputs/single_runs
+  seed: 42
+
+data:
+  root_dir: data
+  dataset_name: Cora
+  normalize_features: true
+
+model:
+  name: gat
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.6
+  heads: 8
+  gat_out_heads: 1
+
+training:
+  max_epochs: 400
+  lr: 0.005
+  weight_decay: 0.0005
+  early_stopping_patience: 80
+  monitor: val_macro_f1
+  monitor_mode: max
+  label_smoothing: 0.0
+  grad_clip_norm: 1.0
+  log_every: 10
+
+system:
+  device: auto
+  num_workers: 0
