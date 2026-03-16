@@ -114,19 +114,3 @@ python scripts/summarize_results.py \
   --runs-root outputs/benchmark_planetoid/runs \
   --out-dir outputs/benchmark_planetoid/reconstructed_summary
 ```
-
-## Notes for turning this into a paper-like project
-
-Good additions once you have real runs:
-1. Report **mean ± std** across at least 3 seeds.
-2. Compare performance on **Cora / CiteSeer / PubMed**.
-3. Add an ablation on hidden size, dropout, or number of layers.
-4. Analyze which classes are most frequently confused.
-5. Visualize node embeddings using t-SNE or PCA.
-
-## Suggested CV / report framing
-
-**Title:** Node Classification on Citation Graphs: GCN vs GraphSAGE vs GAT  
-**Type:** Empirical benchmark study on graph neural networks for semi-supervised node classification.  
-**Public datasets:** Cora, CiteSeer, PubMed.  
-**Metrics:** Accuracy, macro-F1, weighted-F1.
